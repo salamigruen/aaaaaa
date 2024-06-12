@@ -4,141 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="images/x-icon" href="logo.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
-            color: white;
-            overflow-x: hidden; 
+            font-family: "Roboto", sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
         }
         header {
+            background-color: #8B0000;
+            padding: 10px 20px;
+            color: #fff;
             display: flex;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
         }
         .Btn {
-            display: inline-block;
-            outline: none;
-            cursor: pointer;
+            background-color: #fff;
+            color: #8B0000;
+            border: 1px solid #8B0000;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 16px;
-            padding: 10px 16px;
-            min-width: 150px;
-            border: none;
-            color: #fff;
-            background-color: #f95959;
-            transition: background-color .17s ease, color .17s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         .Btn:hover {
-            background-color: #ff0000;
+            background-color: #8B0000;
+            color: #fff;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #f4f4f4;
         }
         .container {
-            max-width: 900px;
-            margin: 20px auto;
+            flex-grow: 1;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
-        h1, h2 {
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .content {
-            margin-bottom: 20px;
+        .card {
+            background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            display: block;
-            overflow-x: auto;
-            white-space: nowrap;
         }
         th, td {
-            padding: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 15px;
+            border: 1px solid #ddd;
             text-align: left;
         }
         th {
-            background-color: rgba(0, 0, 0, 0.5);
-            position: sticky;
-            top: 0;
+            background-color: #f4f4f4;
         }
-        form {
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            width: calc(100% - 16px);
-            padding: 8px;
-            margin: 5px 0;
+        input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
             border: 1px solid #ddd;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.8);
-            color: #333;
+            box-sizing: border-box;
         }
         button {
-            padding: 10px 20px;
-            background-color: #f95959;
-            color: white;
+            background-color: #8B0000;
+            color: #fff;
             border: none;
-            border-radius: 3px;
             cursor: pointer;
-            transition: background-color .17s ease, color .17s ease;
+            transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #ff0000;
-        }
-        .btn-del {
-            background-color: #d9534f;
-        }
-        .admin {
-            color: white;
-        }
-        .page_act {
-            margin-top: 5px;
+            background-color: #660000;
         }
         .act {
-            color: white;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px;
+            color: #fff;
+            background-color: #8B0000;
+            padding: 10px;
             border-radius: 5px;
             text-align: center;
+            margin-top: 10px;
         }
         label {
             display: block;
             margin-top: 10px;
-            color: white;
+            color: #333;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="panel.html"><button class="Btn"><i class='bx bx-home-alt'></i>&nbsp; Admin Panel Overview</button></a>
+        <a href="panel.html"><button class="Btn">Admin Panel Overview</button></a>
     </header>
+    <div class="sidebar">
+        <a href="#fakultaets-daten">Fakultäts-Daten</a>
+        <a href="#fakultaeten-bearbeiten">Fakultäten bearbeiten</a>
+        <a href="#fakultaet-loeschen">Fakultät löschen</a>
+        <a href="#neue-fakultaet-hinzufuegen">Neue Fakultät hinzufügen</a>
+    </div>
     <div class="container">
-        <h1 class="admin">Admin Panel</h1>
-        <div class="content">
+        <div id="fakultaets-daten" class="card">
             <h2>Fakultäts-Daten</h2>
             <div style="max-height: 400px; overflow-y: auto;">
                 <table>
@@ -167,14 +162,14 @@
                 </table>
             </div>
             <form method="post">
-                <button class="page_act" type="submit" name="refresh_page">Aktualisieren</button>
+                <button type="submit" name="refresh_page">Aktualisieren</button>
             </form>
         </div>
-        <div class="content">
+        <div id="fakultaeten-bearbeiten" class="card">
             <h2>Fakultäten bearbeiten</h2>
             <form method="post">
                 <input type="text" id="edit_id" name="edit_id" placeholder="FNr eingeben">
-                <button type="submit" name="fetch_puni">Fakultät bearbeiten</button>
+                <button type="submit" name="fetch_faku">Fakultät bearbeiten</button>
             </form>
 
             <?php
@@ -209,11 +204,11 @@
             }
             ?>
         </div>
-        <div class="content">
+        <div id="fakultaet-loeschen" class="card">
             <h2>Fakultät löschen</h2>
             <form method="post">
                 <input type="text" id="delete_id" name="delete_id" placeholder="FNr eingeben">
-                <button type="submit" name="delete_puni" class="btn-del">Fakultät löschen</button>
+                <button type="submit" name="delete_faku" class="btn-del">Fakultät löschen</button>
             </form>
 
             <?php
@@ -225,7 +220,7 @@
             }
             ?>
         </div>
-        <div class="content">
+        <div id="neue-fakultaet-hinzufuegen" class="card">
             <h2>Neue Fakultät hinzufügen</h2>
             <form method="post">
                 <input type="text" id="new_name" name="new_name" placeholder="Name"><br>
@@ -233,11 +228,11 @@
                 <input type="text" id="new_street" name="new_street" placeholder="Strasse"><br>
                 <input type="text" id="new_number" name="new_number" placeholder="HausNr"><br>
                 <input type="text" id="new_uni" name="new_uni" placeholder="UNr"><br>
-                <button type="submit" name="add_faku">Partneruni hinzufügen</button>
+                <button type="submit" name="add_faku">Neue Fakultät hinzufügen</button>
             </form>
 
             <?php
-            if(isset($_POST['add_puni'])) {
+            if(isset($_POST['add_faku'])) {
                 $stmt = $pdo->prepare('INSERT INTO fakultaeten (Name, E-Mail, Strasse, HausNr, UNr) VALUES (?, ?, ?, ?, ?)');
                 $stmt->execute([$_POST['new_name'], $_POST['new_mail'], $_POST['new_street'], $_POST['new_number'], $_POST['new_uni']]);
                 echo "<p class='act'>Neue Fakultät hinzugefügt!</p>";

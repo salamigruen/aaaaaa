@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Universitätsübersicht</title>
-<!-- Boxicons 아이콘 라이브러리 포함 -->
+<title>University Overview</title>
+<!-- Including Boxicons icon library -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<!-- Google 폰트 사전 연결 -->
+<!-- Preconnect to Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Google 폰트 'Sedan SC' 포함 -->
+<!-- Including Google Font 'Sedan SC' -->
 <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
-<!-- 아이콘 정의 -->
+<!-- Defining the icon -->
 <link rel="icon" type="image/x-icon" href="icon.png">
 <style>
     body {
@@ -23,7 +23,7 @@
         overflow-x: hidden; 
         background-color: #f5f5f5;
     }
-  .헤더 {
+  .header {
     background-color: #C70039; 
     display: flex; 
     align-items: center; 
@@ -35,7 +35,7 @@
     animation: slideInDown 1s;
 }
 
-.로그인버튼 {
+.loginButton {
     font-size: 15px; 
     text-align: center; 
     height: 30px; 
@@ -49,12 +49,12 @@
     cursor: pointer; 
 }
 
-.로그인버튼:hover {
+.loginButton:hover {
     background-color: white; 
     color: #900C3F; 
 }
 
-#타이틀 {
+#title {
     color: white;
     font-weight: bold; 
     font-size: 25px;
@@ -79,24 +79,24 @@ nav a:hover {
     text-decoration: underline; 
 }
 
-.콘텐츠섹션 {
+.contentSection {
     padding: 40px 20px; 
     text-align: center; 
     animation: fadeInUp 1.5s;
 }
 
-.콘텐츠섹션 h2 {
+.contentSection h2 {
     color: #900C3F;
     margin-bottom: 20px;
 }
 
-.콘텐츠섹션 p {
+.contentSection p {
     color: #333;
     font-size: 16px;
     line-height: 1.5;
 }
 
-#주요사진 {
+#mainImage {
     width: 100%; 
     max-height: 500px;
     object-fit: cover;
@@ -105,11 +105,11 @@ nav a:hover {
     animation: zoomIn 2s;
 }
 
-#주요사진:hover {
+#mainImage:hover {
     transform: scale(1.015); 
 }
 
-.바닥글 {
+.footer {
     background-color: #C70039; 
     color: white; 
     text-align: center; 
@@ -120,17 +120,16 @@ nav a:hover {
     animation: slideInUp 1s;
 }
 
-.바닥글 a {
+.footer a {
     color: white; 
     margin: 0 10px; 
     text-decoration: none; 
 }
 
-.바닥글 a:hover {
+.footer a:hover {
     text-decoration: underline;
 }
 
-@keyframes slide
 @keyframes slideInDown {
     from {
         transform: translateY(-100%);
@@ -186,47 +185,44 @@ nav a:hover {
 </style>
 </head>
 <body>
-    <!-- 헤더 영역 -->
-    <header class="헤더">
-        <h1 id="타이틀">Universitätsübersicht</h1> <!-- 페이지 제목 -->
-        <a href="login.php"><button class="로그인버튼"><i class='bx bx-user bx-xs'></i>&nbsp;Einloggen</button></a> <!-- 로그인 버튼 -->
+    <!-- Header section -->
+    <header class="header">
+        <h1 id="title">University Overview</h1> <!-- Page title -->
+        <a href="panel.html"><button class="loginButton"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login button -->
     </header>
-    <!-- 내비게이션 영역 -->
+    <!-- Navigation section -->
 <nav>
-    <a href="#home">Startseite</a> <!-- 홈 링크 -->
-    <a href="#about">Über uns</a> <!-- 소개 링크 -->
-    <a href="#courses">Kurse</a> <!-- 강좌 링크 -->
-    <a href="#contact">Kontakt</a> <!-- 연락처 링크 -->
+    <a href="#home">Home</a> <!-- Home link -->
+    <a href="#about">About Us</a> <!-- About link -->
+    <a href="#courses">Courses</a> <!-- Courses link -->
+    <a href="#contact">Contact</a> <!-- Contact link -->
 </nav>
 
-<!-- 메인 콘텐츠 -->
+<!-- Main content -->
 <main>
-    <div class="콘텐츠섹션" id="home">
-        <img id="주요사진" src="bg.jpg" alt="Hintergrundbild"> <!-- 주요 이미지 -->
+    <div class="contentSection" id="home">
+        <img id="mainImage" src="bg.jpg" alt="Background Image"> <!-- Main image -->
     </div>
-    <div class="콘텐츠섹션" id="about">
-        <h2>Über uns</h2> <!-- 부제목 -->
-        <p>Willkommen bei der Universitätsübersicht. Unsere Plattform bietet detaillierte Informationen über verschiedene Universitäten weltweit. Erkunden Sie Kurse, Campusleben und vieles mehr, um die beste Bildungseinrichtung für sich zu finden.</p>
+    <div class="contentSection" id="about">
+        <h2>About Us</h2> <!-- Subtitle -->
+        <p>Welcome to University Overview. Our platform provides detailed information about various universities worldwide. Explore courses, campus life, and more to find the best educational institution for you.</p>
     </div>
-    <div class="콘텐츠섹션" id="courses">
-        <h2>Kurse</h2> <!-- 부제목 -->
-        <p>Entdecken Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Wir bieten Kurse in verschiedenen Fachrichtungen an, darunter Ingenieurwesen, Geisteswissenschaften, Naturwissenschaften und vieles mehr, um Ihre akademischen Interessen und beruflichen Ziele zu unterstützen.</p>
+    <div class="contentSection" id="courses">
+        <h2>Courses</h2> <!-- Subtitle -->
+        <p>Discover a variety of courses offered by leading universities. We offer courses in various disciplines, including engineering, humanities, sciences, and more, to support your academic interests and career goals.</p>
     </div>
-    <div class="콘텐츠섹션" id="contact">
-        <h2>Kontakt</h2> <!-- 부제목 -->
-        <p>Haben Sie Fragen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns auf Ihre Nachricht!</p>
+    <div class="contentSection" id="contact">
+        <h2>Contact</h2> <!-- Subtitle -->
+        <p>Have questions? Contact us via email or phone, and our friendly team will be happy to assist you. We look forward to hearing from you!</p>
     </div>
 </main>
 
-<!-- 바닥글 영역 -->
-<footer class="바닥글">
-    <p>&copy; 2024 Universitätsübersicht</p> <!-- 저작권 -->
-    <a href="#">Impressum</a> <!-- 출판 정보 링크 -->
-    <a href="#">Datenschutz</a> <!-- 개인정보 처리방침 링크 -->
+<!-- Footer section -->
+<footer class="footer">
+    <p>&copy; 2024 University Overview</p> <!-- Copyright -->
+    <a href="#">Impressum</a> <!-- Imprint link -->
+    <a href="#">Privacy Policy</a> <!-- Privacy Policy link -->
 </footer>
 
-<script>
-    console.log(2 + 2); // 디버깅을 위한 콘솔 출력 
-</script>
 </body>
 </html>

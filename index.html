@@ -3,226 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>University Overview</title>
-<!-- Including Boxicons icon library -->
+<title>Universitätsübersicht</title>
+<!-- Einbeziehung der Boxicons-Icon-Bibliothek -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<!-- Preconnect to Google Fonts -->
+<!-- Vorverbindung zu Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Including Google Font 'Sedan SC' -->
+<!-- Einbeziehung der Google-Schriftart 'Sedan SC' -->
 <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
-<!-- Defining the icon -->
+<!-- Definition des Symbols -->
 <link rel="icon" type="image/x-icon" href="icon.png">
 <style>
     body {
-        margin: 0; 
-        padding: 0; 
-        font-family: "Sedan SC", serif; 
-        font-weight: 400; 
-        font-style: normal; 
-        overflow-x: hidden; 
+        margin: 0;
+        padding: 0;
+        font-family: "Sedan SC", serif;
+        font-weight: 400;
+        font-style: normal;
+        overflow-x: hidden;
         background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
     }
-  .header {
-    background-color: #C70039; 
-    display: flex; 
-    align-items: center; 
-    height: 80px; 
-    width: 100%; 
-    border-bottom: 2px solid #900C3F; 
-    justify-content: space-between;
-    padding: 0 20px; 
-    animation: slideInDown 1s;
-}
-
-.loginButton {
-    font-size: 15px; 
-    text-align: center; 
-    height: 30px; 
-    width: 80px; 
-    margin-right: 40px;
-    border: none;
-    background-color: #900C3F; 
-    color: white; 
-    border-radius: 3px; 
-    transition: all 0.3s; 
-    cursor: pointer; 
-}
-
-.loginButton:hover {
-    background-color: white; 
-    color: #900C3F; 
-}
-
-#title {
-    color: white;
-    font-weight: bold; 
-    font-size: 25px;
-}
-
-nav {
-    margin-top: 10px;
-    text-align: center; 
-    animation: fadeIn 2s;
-}
-
-nav a {
-    margin: 0 15px; 
-    text-decoration: none; 
-    color: #C70039; 
-    font-size: 18px;
-    transition: all 0.3s; 
-}
-
-nav a:hover {
-    color: #900C3F; 
-    text-decoration: underline; 
-}
-
-.contentSection {
-    padding: 40px 20px; 
-    text-align: center; 
-    animation: fadeInUp 1.5s;
-}
-
-.contentSection h2 {
-    color: #900C3F;
-    margin-bottom: 20px;
-}
-
-.contentSection p {
-    color: #333;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-#mainImage {
-    width: 100%; 
-    max-height: 500px;
-    object-fit: cover;
-    transition: all 1.5s; 
-    border: 1px solid #900C3F;
-    animation: zoomIn 2s;
-}
-
-#mainImage:hover {
-    transform: scale(1.015); 
-}
-
-.footer {
-    background-color: #C70039; 
-    color: white; 
-    text-align: center; 
-    padding: 20px 0;
-    width: 100%;
-    border-top: 2px solid #900C3F;
-    position: relative;
-    animation: slideInUp 1s;
-}
-
-.footer a {
-    color: white; 
-    margin: 0 10px; 
-    text-decoration: none; 
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-@keyframes slideInDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
+    .einHauchDesMorgensRotesErwachenAmHorizontDasLichtDerWissenSonneInUnsErstrahlt {
+        background-color: #C70039;
+        display: flex;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+        border-bottom: 2px solid #900C3F;
+        justify-content: space-between;
+        padding: 0 20px;
+        animation: gleitenHineinVonOben 1s;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    .knopfDesEinlassesDerSeele {
+        font-size: 15px;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+        margin-right: 40px;
+        border: none;
+        background-color: #900C3F;
+        color: white;
+        border-radius: 3px;
+        transition: all 0.3s;
+        cursor: pointer;
     }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    .knopfDesEinlassesDerSeele:hover {
+        background-color: white;
+        color: #900C3F;
     }
-    to {
-        opacity: 1;
+    #titelDerErkenntnis {
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
     }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
+    .behältnisDesInhalts {
+        display: flex;
+        width: 100%;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    nav {
+        width: 20%;
+        background-color: #C70039;
+        height: calc(100vh - 80px);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: gleitenHineinVonLinks 1s;
     }
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
+    nav a {
+        margin: 15px 0;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s;
     }
-    to {
-        transform: scale(1);
-        opacity: 1;
+    nav a:hover {
+        color: #900C3F;
+        text-decoration: underline;
     }
-}
-
-@keyframes slideInUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
+    .inhaltDesLebens {
+        margin-left: 20%;
+        padding: 40px 20px;
+        width: 80%;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    .sektionDerErzählung {
+        margin-bottom: 40px;
+        animation: sanftesEmporsteigen 1.5s;
     }
-}
+    .sektionDerErzählung h2 {
+        color: #900C3F;
+        margin-bottom: 20px;
+    }
+    .sektionDerErzählung p {
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .sektionDesSchauens {
+        text-align: center;
+    }
+    .ausdehnungDesGeheimnisses {
+        background-color: white;
+        color: #900C3F;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 18px;
+        transition: 0.4s;
+        border-bottom: 1px solid #900C3F;
+    }
+    .ausdehnungDesGeheimnisses:hover, .aktiv {
+        background-color: #C70039;
+        color: white;
+    }
+    .innerstesDesInhalts {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+    #hauptbildDesTages {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        transition: all 1.5s;
+        border: 1px solid #900C3F;
+        animation: heranzoomen 2s;
+    }
+    #hauptbildDesTages:hover {
+        transform: scale(1.015);
+    }
+    .abendrotDesFußesDesPfades {
+        background-color: #C70039;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        border-top: 2px solid #900C3F;
+        position: relative;
+        animation: gleitenHineinVonUnten 1s;
+    }
+    .abendrotDesFußesDesPfades a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+    .abendrotDesFußesDesPfades a:hover {
+        text-decoration: underline;
+    }
+    @keyframes gleitenHineinVonOben {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes gleitenHineinVonLinks {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes sanftesEmporsteigen {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes heranzoomen {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    @keyframes gleitenHineinVonUnten {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 </style>
 </head>
 <body>
-    <!-- Header section -->
-    <header class="header">
-        <h1 id="title">University Overview</h1> <!-- Page title -->
-        <a href="panel.html"><button class="loginButton"><i class='bx bx-user bx-xs'></i>&nbsp;Login</button></a> <!-- Login button -->
+    <!-- Die Pforte des Wissens -->
+    <header class="einHauchDesMorgensRotesErwachenAmHorizontDasLichtDerWissenSonneInUnsErstrahlt">
+        <h1 id="titelDerErkenntnis">Universitätsübersicht</h1> <!-- Der Titel der Seite -->
+        <a href="panel.html"><button class="knopfDesEinlassesDerSeele"><i class='bx bx-user bx-xs'></i>&nbsp;Einlass</button></a> <!-- Der Einlass-Knopf -->
     </header>
-    <!-- Navigation section -->
-<nav>
-    <a href="#home">Home</a> <!-- Home link -->
-    <a href="#about">About Us</a> <!-- About link -->
-    <a href="#courses">Courses</a> <!-- Courses link -->
-    <a href="#contact">Contact</a> <!-- Contact link -->
-</nav>
-
-<!-- Main content -->
-<main>
-    <div class="contentSection" id="home">
-        <img id="mainImage" src="bg.jpg" alt="Background Image"> <!-- Main image -->
-    </div>
-    <div class="contentSection" id="about">
-        <h2>About Us</h2> <!-- Subtitle -->
-        <p>Welcome to University Overview. Our platform provides detailed information about various universities worldwide. Explore courses, campus life, and more to find the best educational institution for you.</p>
-    </div>
-    <div class="contentSection" id="courses">
-        <h2>Courses</h2> <!-- Subtitle -->
-        <p>Discover a variety of courses offered by leading universities. We offer courses in various disciplines, including engineering, humanities, sciences, and more, to support your academic interests and career goals.</p>
-    </div>
-    <div class="contentSection" id="contact">
-        <h2>Contact</h2> <!-- Subtitle -->
-        <p>Have questions? Contact us via email or phone, and our friendly team will be happy to assist you. We look forward to hearing from you!</p>
-    </div>
-</main>
-
-<!-- Footer section -->
-<footer class="footer">
-    <p>&copy; 2024 University Overview</p> <!-- Copyright -->
-    <a href="">Impressum</a> <!-- Imprint link -->
-    <a href="#">Privacy Policy</a> <!-- Privacy Policy link -->
+    <!-- Der Wegweiser durch das Wissen -->
+    <div class="behältnisDesInhalts">
+        <nav>
+            <a href="#heimat">Heimat</a> <!-- Heimatlink -->
+            <a href="#überUns">Über uns</a> <!-- Über uns Link -->
+            <a href="#kurse">Kurse</a> <!-- Kurse Link -->
+            <a href="#campusLeben">Campusleben</a> <!-- Campusleben Link -->
+            <a href="#alumni">Alumni-Erfolg</a> <!-- Alumni-Erfolg Link -->
+            <a href="#kontakt">Kontakt</a> <!-- Kontakt Link -->
+        </nav>
+    <!-- Der Hauptinhalt des Wissens -->
+    <main class="inhaltDesLebens">
+        <div class="sektionDerErzählung" id="heimat">
+            <img id="hauptbildDesTages" src="bg.jpg" alt="Hintergrundbild"> <!-- Hauptbild -->
+        </div>
+        <div class="sektionDerErzählung" id="überUns">
+            <h2>Über uns</h2> <!-- Untertitel -->
+            <p>Willkommen bei der Universitätsübersicht. Unsere Plattform bietet umfassende Informationen über verschiedene Universitäten weltweit. Entdecken Sie Kurse, das Campusleben und mehr, um die beste Bildungseinrichtung für sich zu finden.</p>
+        </div>
+        <div class="sektionDerErzählung" id="kurse">
+            <h2>Kurse</h2>
+            <p>Entdecken Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Wir bieten Kurse in verschiedenen Disziplinen an, darunter Ingenieurwesen, Geisteswissenschaften, Naturwissenschaften und mehr, um Ihre akademischen Interessen und Karriereziele zu unterstützen.</p>
+            <button class="ausdehnungDesGeheimnisses">Ingenieurwesen</button>
+            <div class="innerstesDesInhalts">
+                <p>Erkunden Sie erstklassige Ingenieurprogramme weltweit, die Bereiche wie Bauingenieurwesen, Maschinenbau, Elektrotechnik und Computertechnik abdecken.</p>
+            </div>
+            <button class="ausdehnungDesGeheimnisses">Geisteswissenschaften</button>
+            <div class="innerstesDesInhalts">
+                <p>Tauchen Sie ein in Geisteswissenschaften wie Literatur, Geschichte, Philosophie und Kulturwissenschaften, die von angesehenen Universitäten angeboten werden.</p>
+            </div>
+            <button class="ausdehnungDesGeheimnisses">Naturwissenschaften</button>
+            <div class="innerstesDesInhalts">
+                <p>Erfahren Sie mehr über Naturwissenschaftskurse wie Biologie, Chemie, Physik und Umweltwissenschaften, die von Top-Institutionen angeboten werden.</p>
+            </div>
+        </div>
+        <div class="sektionDerErzählung" id="campusLeben">
+            <h2>Campusleben</h2>
+            <p>Erfahren Sie mehr über das lebendige Campusleben an verschiedenen Universitäten, einschließlich Clubs, Sport, Veranstaltungen und Studentenanlagen, die Ihr Bildungserlebnis bereichern.</p>
+        </div>
+        <div class="sektionDerErzählung" id="alumni">
+            <h2>Alumni-Erfolg</h2>
+            <p>Lesen Sie inspirierende Geschichten erfolgreicher Alumni, die bedeutende Beiträge in ihren Bereichen und Gemeinschaften geleistet haben und die Auswirkungen ihrer universitären Ausbildung aufzeigen.</p>
+        </div>
+        <div class="sektionDerErzählung sektionDesSchauens">
+            <h2>Erkunden Sie mehr</h2>
+            <!-- Eingebettetes YouTube-Video -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8NDuhUE8JKA?si=rumVNO55wGQ8Y3io&amp;controls=0" title="YouTube-Video-Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="sektionDerErzählung" id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Haben Sie Fragen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns darauf, von Ihnen zu hören!</p>
+        </div>
+        <!-- Der Abendrote des Fußes des Pfades -->
+<footer class="abendrotDesFußesDesPfades">
+    <p>&copy; 2024 Universitätsübersicht</p> <!-- Urheberrecht -->
+    <a href="https://www.churchofsatan.com/">Impressum</a> <!-- Impressum-Link -->
+    <a href="https://www.churchofsatan.com/">Datenschutzrichtlinie</a> <!-- Datenschutzrichtlinie-Link -->
 </footer>
+<script>
+    var acc = document.getElementsByClassName("ausdehnungDesGeheimnisses");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("aktiv");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

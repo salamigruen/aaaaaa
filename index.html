@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universitätsübersicht</title>
+<!-- Boxicons 아이콘 라이브러리 포함 -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Google 폰트 사전 연결 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google 폰트 'Sedan SC' 포함 -->
+<link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+<!-- 아이콘 정의 -->
+<link rel="icon" type="image/x-icon" href="icon.png">
+<style>
+    body {
+        margin: 0; 
+        padding: 0; 
+        font-family: "Sedan SC", serif; 
+        font-weight: 400; 
+        font-style: normal; 
+        overflow-x: hidden; 
+        background-color: #f5f5f5;
+    }
+  .헤더 {
+    background-color: #C70039; 
+    display: flex; 
+    align-items: center; 
+    height: 80px; 
+    width: 100%; 
+    border-bottom: 2px solid #900C3F; 
+    justify-content: space-between;
+    padding: 0 20px; 
+    animation: slideInDown 1s;
+}
+
+.로그인버튼 {
+    font-size: 15px; 
+    text-align: center; 
+    height: 30px; 
+    width: 80px; 
+    margin-right: 40px;
+    border: none;
+    background-color: #900C3F; 
+    color: white; 
+    border-radius: 3px; 
+    transition: all 0.3s; 
+    cursor: pointer; 
+}
+
+.로그인버튼:hover {
+    background-color: white; 
+    color: #900C3F; 
+}
+
+#타이틀 {
+    color: white;
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+nav {
+    margin-top: 10px;
+    text-align: center; 
+    animation: fadeIn 2s;
+}
+
+nav a {
+    margin: 0 15px; 
+    text-decoration: none; 
+    color: #C70039; 
+    font-size: 18px;
+    transition: all 0.3s; 
+}
+
+nav a:hover {
+    color: #900C3F; 
+    text-decoration: underline; 
+}
+
+.콘텐츠섹션 {
+    padding: 40px 20px; 
+    text-align: center; 
+    animation: fadeInUp 1.5s;
+}
+
+.콘텐츠섹션 h2 {
+    color: #900C3F;
+    margin-bottom: 20px;
+}
+
+.콘텐츠섹션 p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#주요사진 {
+    width: 100%; 
+    max-height: 500px;
+    object-fit: cover;
+    transition: all 1.5s; 
+    border: 1px solid #900C3F;
+    animation: zoomIn 2s;
+}
+
+#주요사진:hover {
+    transform: scale(1.015); 
+}
+
+.바닥글 {
+    background-color: #C70039; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 0;
+    width: 100%;
+    border-top: 2px solid #900C3F;
+    position: relative;
+    animation: slideInUp 1s;
+}
+
+.바닥글 a {
+    color: white; 
+    margin: 0 10px; 
+    text-decoration: none; 
+}
+
+.바닥글 a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slide
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header class="헤더">
+        <h1 id="타이틀">Universitätsübersicht</h1> <!-- 페이지 제목 -->
+        <a href="login.php"><button class="로그인버튼"><i class='bx bx-user bx-xs'></i>&nbsp;Einloggen</button></a> <!-- 로그인 버튼 -->
+    </header>
+    <!-- 내비게이션 영역 -->
+<nav>
+    <a href="#home">Startseite</a> <!-- 홈 링크 -->
+    <a href="#about">Über uns</a> <!-- 소개 링크 -->
+    <a href="#courses">Kurse</a> <!-- 강좌 링크 -->
+    <a href="#contact">Kontakt</a> <!-- 연락처 링크 -->
+</nav>
+
+<!-- 메인 콘텐츠 -->
+<main>
+    <div class="콘텐츠섹션" id="home">
+        <img id="주요사진" src="bg.jpg" alt="Hintergrundbild"> <!-- 주요 이미지 -->
+    </div>
+    <div class="콘텐츠섹션" id="about">
+        <h2>Über uns</h2> <!-- 부제목 -->
+        <p>Willkommen bei der Universitätsübersicht. Unsere Plattform bietet detaillierte Informationen über verschiedene Universitäten weltweit. Erkunden Sie Kurse, Campusleben und vieles mehr, um die beste Bildungseinrichtung für sich zu finden.</p>
+    </div>
+    <div class="콘텐츠섹션" id="courses">
+        <h2>Kurse</h2> <!-- 부제목 -->
+        <p>Entdecken Sie eine Vielzahl von Kursen, die von führenden Universitäten angeboten werden. Wir bieten Kurse in verschiedenen Fachrichtungen an, darunter Ingenieurwesen, Geisteswissenschaften, Naturwissenschaften und vieles mehr, um Ihre akademischen Interessen und beruflichen Ziele zu unterstützen.</p>
+    </div>
+    <div class="콘텐츠섹션" id="contact">
+        <h2>Kontakt</h2> <!-- 부제목 -->
+        <p>Haben Sie Fragen? Kontaktieren Sie uns per E-Mail oder Telefon, und unser freundliches Team hilft Ihnen gerne weiter. Wir freuen uns auf Ihre Nachricht!</p>
+    </div>
+</main>
+
+<!-- 바닥글 영역 -->
+<footer class="바닥글">
+    <p>&copy; 2024 Universitätsübersicht</p> <!-- 저작권 -->
+    <a href="#">Impressum</a> <!-- 출판 정보 링크 -->
+    <a href="#">Datenschutz</a> <!-- 개인정보 처리방침 링크 -->
+</footer>
+
+<script>
+    console.log(2 + 2); // 디버깅을 위한 콘솔 출력 
+</script>
+</body>
+</html>

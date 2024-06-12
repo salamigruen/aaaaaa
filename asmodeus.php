@@ -139,28 +139,28 @@
     <div class="container">
         <h1 class="admin">Admin Panel</h1>
         <div class="content">
-            <h2>Partneruni-Daten</h2>
+            <h2>Fakultäts-Daten</h2>
             <div style="max-height: 400px; overflow-y: auto;">
                 <table>
                     <tr>
-                        <th>PNr</th>
+                        <th>FNr</th>
                         <th>Name</th>
-                        <th>Land</th>
-                        <th>Austauschprogramm</th>               
                         <th>E-Mail</th>
-                        <th>Dauer</th>
+                        <th>Strasse</th>               
+                        <th>HausNr</th>
+                        <th>UNr</th>
                     </tr>
                     <?php
                     $pdo = new PDO('mysql:host=localhost;dbname=uni', 'root', '');
-                    $stmt = $pdo->query('SELECT * FROM partneruniversitaeten');
+                    $stmt = $pdo->query('SELECT * FROM fakultaeten');
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
-                        echo "<td>".$row['PNr']."</td>";
+                        echo "<td>".$row['FNr']."</td>";
                         echo "<td>".$row['Name']."</td>";
-                        echo "<td>".$row['Land']."</td>";
-                        echo "<td>".$row['Austauschprogramm']."</td>";
                         echo "<td>".$row['E-Mail']."</td>";
-                        echo "<td>".$row['Dauer']."</td>";
+                        echo "<td>".$row['Strasse']."</td>";
+                        echo "<td>".$row['HausNr']."</td>";
+                        echo "<td>".$row['UNr']."</td>";
                         echo "</tr>";
                     }
                     ?>
@@ -171,76 +171,76 @@
             </form>
         </div>
         <div class="content">
-            <h2>Partneruni bearbeiten</h2>
+            <h2>Fakultäten bearbeiten</h2>
             <form method="post">
-                <input type="text" id="edit_id" name="edit_id" placeholder="PNr eingeben">
-                <button type="submit" name="fetch_puni">Partneruni bearbeiten</button>
+                <input type="text" id="edit_id" name="edit_id" placeholder="FNr eingeben">
+                <button type="submit" name="fetch_puni">Fakultät bearbeiten</button>
             </form>
 
             <?php
-            if(isset($_POST['fetch_puni'])) {
+            if(isset($_POST['fetch_faku'])) {
                 $edit_id = $_POST['edit_id'];
-                $stmt = $pdo->prepare('SELECT * FROM partneruniversitaeten WHERE PNr = ?');
+                $stmt = $pdo->prepare('SELECT * FROM fakultaeten WHERE FNr = ?');
                 $stmt->execute([$edit_id]);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <form method="post">
-                    <input type="hidden" name="edit_id" value="<?php echo $row['PNr']; ?>">
+                    <input type="hidden" name="edit_id" value="<?php echo $row['FNr']; ?>">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" value="<?php echo $row['Name']; ?>"><br>
-                    <label for="country">Land:</label>
-                    <input type="text" id="country" name="country" value="<?php echo $row['Land']; ?>"><br>
-                    <label for="programm">Austauschprogramm:</label>
-                    <input type="text" id="programm" name="programm" value="<?php echo $row['Austauschprogramm']; ?>"><br>
                     <label for="mail">E-Mail:</label>
                     <input type="text" id="mail" name="mail" value="<?php echo $row['E-Mail']; ?>"><br>
-                    <label for="length">Dauer:</label>
-                    <input type="text" id="length" name="length" value="<?php echo $row['Dauer']; ?>"><br>
-                    <button type="submit" name="update_uni">Uni aktualisieren</button>
+                    <label for="street">Strasse:</label>
+                    <input type="text" id="street" name="street" value="<?php echo $row['Strasse']; ?>"><br>
+                    <label for="number">HausNr:</label>
+                    <input type="text" id="number" name="number" value="<?php echo $row['HausNr']; ?>"><br>
+                    <label for="uni">UNr:</label>
+                    <input type="text" id="uni" name="uni" value="<?php echo $row['UNr']; ?>"><br>
+                    <button type="submit" name="update_faku">Fakultät aktualisieren</button>
                 </form>
             <?php } ?>
 
             <?php
-            if(isset($_POST['update_puni'])) {
+            if(isset($_POST['update_faku'])) {
                 $update_id = $_POST['edit_id'];
-                $stmt = $pdo->prepare('UPDATE partneruniversitaeten SET Name=?, Land=?, Austauschprogramm=?, E-Mail=?, Dauer=? WHERE UNr=?');
-                $stmt->execute([$_POST['name'], $_POST['country'], $_POST['programm'], $_POST['mail'], $_POST['length'], $update_id]);
-                echo "<p class='act'>Partneruni-Daten aktualisiert!</p>";
+                $stmt = $pdo->prepare('UPDATE fakultaeten SET Name=?, E-Mail=?, Strasse=?, HausNr=?, UNr=? WHERE FNr=?');
+                $stmt->execute([$_POST['name'], $_POST['mail'], $_POST['street'], $_POST['number'], $_POST['uni'], $update_id]);
+                echo "<p class='act'>Fakultäts-Daten aktualisiert!</p>";
             }
             ?>
         </div>
         <div class="content">
-            <h2>Partneruni löschen</h2>
+            <h2>Fakultät löschen</h2>
             <form method="post">
-                <input type="text" id="delete_id" name="delete_id" placeholder="PNr eingeben">
-                <button type="submit" name="delete_puni" class="btn-del">Partneruni löschen</button>
+                <input type="text" id="delete_id" name="delete_id" placeholder="FNr eingeben">
+                <button type="submit" name="delete_puni" class="btn-del">Fakultät löschen</button>
             </form>
 
             <?php
-            if(isset($_POST['delete_puni'])) {
+            if(isset($_POST['delete_faku'])) {
                 $delete_id = $_POST['delete_id'];
-                $stmt = $pdo->prepare('DELETE FROM partneruniversitaeten WHERE PNr = ?');
+                $stmt = $pdo->prepare('DELETE FROM fakultaeten WHERE FNr = ?');
                 $stmt->execute([$delete_id]);
-                echo "<p class='act'>Partneruni gelöscht!</p>";
+                echo "<p class='act'>Fakultät gelöscht!</p>";
             }
             ?>
         </div>
         <div class="content">
-            <h2>Neue Partneruni hinzufügen</h2>
+            <h2>Neue Fakultät hinzufügen</h2>
             <form method="post">
                 <input type="text" id="new_name" name="new_name" placeholder="Name"><br>
-                <input type="text" id="new_country" name="new_country" placeholder="Land"><br>
-                <input type="text" id="new_programm" name="new_programm" placeholder="Austauschprogramm"><br>
                 <input type="text" id="new_mail" name="new_mail" placeholder="E-Mail"><br>
-                <input type="text" id="new_length" name="new_length" placeholder="Dauer"><br>
-                <button type="submit" name="add_puni">Partneruni hinzufügen</button>
+                <input type="text" id="new_street" name="new_street" placeholder="Strasse"><br>
+                <input type="text" id="new_number" name="new_number" placeholder="HausNr"><br>
+                <input type="text" id="new_uni" name="new_uni" placeholder="UNr"><br>
+                <button type="submit" name="add_faku">Partneruni hinzufügen</button>
             </form>
 
             <?php
             if(isset($_POST['add_puni'])) {
-                $stmt = $pdo->prepare('INSERT INTO universitaeten (Name, Land, Austauschprogramm, E-Mail, Dauer) VALUES (?, ?, ?, ?, ?)');
-                $stmt->execute([$_POST['new_name'], $_POST['new_country'], $_POST['new_programm'], $_POST['new_mail'], $_POST['new_length']]);
-                echo "<p class='act'>Neue Partneruni hinzugefügt!</p>";
+                $stmt = $pdo->prepare('INSERT INTO fakultaeten (Name, E-Mail, Strasse, HausNr, UNr) VALUES (?, ?, ?, ?, ?)');
+                $stmt->execute([$_POST['new_name'], $_POST['new_mail'], $_POST['new_street'], $_POST['new_number'], $_POST['new_uni']]);
+                echo "<p class='act'>Neue Fakultät hinzugefügt!</p>";
             }
             ?>
         </div>

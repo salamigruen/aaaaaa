@@ -6,6 +6,52 @@
     <title>Panel</title>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+    body {
+        margin: 0; 
+        padding: 0; 
+        font-family: "Sedan SC", serif; 
+        font-weight: 400; 
+        font-style: normal; 
+        overflow-x: hidden; 
+    }
+
+.header-top {
+    background-color: #C70039; 
+    display: flex; 
+    align-items: center; 
+    height: 80px; 
+    width: 100%; 
+    border-bottom: 2px solid #900C3F; 
+    justify-content: space-between;
+    padding: 0 20px; 
+    animation: slideInDown 1s;
+}
+
+#title-header {
+    color: white;
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+.btn-tep {
+    font-size: 15px; 
+    text-align: center; 
+    height: 30px; 
+    width: 100px; 
+    margin-right: 40px;
+    border: none;
+    background-color: #900C3F; 
+    color: white; 
+    border-radius: 3px; 
+    transition: all 0.3s; 
+    cursor: pointer; 
+}
+
+.btn-tep:hover {
+    background-color: white; 
+    color: #900C3F; 
+}
     .paul{
         color: #8B0000;
         border: 1px solid #8B0000;
@@ -13,6 +59,15 @@
         border-radius: 5px;
         box-shadow: 1px 5px 10px #000000;
         cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.3s;
+    }
+
+    .paul:hover {
+        background-color: #8B0000;
+        color: white;
+        box-shadow: 10px 10px 10px black;
+
     }
 
     .paul2{
@@ -25,6 +80,20 @@
     }
 
     .container{
+        margin-top: 100px;
+        margin-left: 32%;
+        margin-right: auto;
+        width: 100%;
+        display: inline-block;
+    }
+
+    img {
+        margin-left: 45%;
+        margin-top: 100px;
+        border-style: solid;
+        border-color: red;
+        border-width: 13px;
+        border-radius: 6px;
 
     }
 
@@ -35,12 +104,17 @@
 
 
 <body>
-    <a href="index.html"><button class="paul2">Homepage</button></a>
+    <header class="header-top">
+        <h1 id="title-header">Universitäten Panel</h1> <!-- 페이지 제목 -->
+        <a href="index.html"><button class="btn-tep"><i class='bx bx-user bx-xs'></i>&nbsp;Homepage</button></a> <!-- 로그인 버튼 -->
+    </header>
     <div class="container">
         <a href="a.php"><button class="paul">Fakultäten</button></a>
         <a href="b.php"><button class="paul">Studiengang</button></a>
         <a href="c.php"><button class="paul">Partneruniversitäten</button></a>
         <a href="d.php"><button class="paul">Universitäten</button></a>
+        
     </div>
+    
 </body>
 </html>
